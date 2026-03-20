@@ -1,0 +1,4 @@
+Azure SQL Database details
+
+name = satya-root
+pass = Hospital@5616

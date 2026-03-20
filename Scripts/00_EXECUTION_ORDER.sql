@@ -1,0 +1,55 @@
+-- ============================================
+-- MASTER EXECUTION GUIDE
+-- Run scripts in this EXACT order
+-- ============================================
+--
+-- STEP 1: 01_DimPayer.sql
+--         Creates 10 insurance payer rows
+--         Adds InsuranceStatus (Insured/Uninsured)
+--
+-- STEP 2: 02_DimEncounterClass.sql
+--         Creates 6 encounter types with clinical sort order
+--         Hardcoded VALUES (no source table)
+--
+-- STEP 3: 03_DimPatient.sql
+--         Creates ~974 patient rows
+--         Calculates Age, AgeBucket, IsDeceased using
+--         COALESCE, DATEDIFF, and CASE statements
+--
+-- STEP 4: 04_DimDate.sql
+--         Generates 4,383 calendar days (2011-2022)
+--         Uses recursive CTE with MAXRECURSION 5000
+--         Required for DAX time intelligence
+--
+-- STEP 5: 05_FactEncounters.sql
+--         Creates ~27,891 encounter rows
+--         Calculates LengthOfStay_Hours and
+--         Is30DayReadmission using LEAD() window function
+--         This is the most complex script
+--
+-- STEP 6: 06_FactProcedures.sql
+--         Creates ~47,702 procedure rows
+--         Links to FactEncounters via EncounterID
+--
+-- STEP 7: 07_Verification.sql
+--         Validates row counts, FK integrity, data quality
+--         Run this last to confirm everything loaded correctly
+--
+-- ============================================
+-- TROUBLESHOOTING:
+--
+-- If a script fails, DROP the table and re-run:
+--    DROP TABLE IF EXISTS TableName;
+--
+-- If column names don't match, check exact names:
+--    SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS
+--    WHERE TABLE_NAME = 'your_table';
+--
+-- [Start] and [Stop] are bracketed in scripts because
+-- they are reserved words in SQL Server
+--
+-- After all tables are created, connect Power BI:
+--    Get Data > Azure > Azure SQL Database
+--    Load ONLY the Dim and Fact tables
+--    Do NOT load the raw CSV tables
+-- ============================================
