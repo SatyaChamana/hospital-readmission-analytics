@@ -25,19 +25,19 @@ This project answers five critical questions:
 ## Dashboard Preview
 
 ### Page 1: Executive Summary
-![Executive Summary](dashboard_screenshots/Hospital Data_Page_1.png)
+![Executive Summary](dashboard_screenshots/Hospital_Data_Page_1.png)
 High-level KPIs with monthly encounter trends, insurance coverage split, and encounter class distribution. Interactive year range slider filters all visuals simultaneously.
 
 ### Page 2: Readmission Deep Dive
-![Readmission Deep Dive](dashboard_screenshots/Hospital Data_Page_2.png)
+![Readmission Deep Dive](dashboard_screenshots/Hospital_Data_Page_2.png)
 30-day readmission analysis segmented by age group and payer. Heatmap matrix reveals which encounter class and payer combinations carry the highest readmission risk. Drill-through enabled on the patient table.
 
 ### Page 3: Financial Performance
-![Financial Performance](dashboard_screenshots/Hospital Data_Page_3.png)
+![Financial Performance](dashboard_screenshots/Hospital_Data_Page_3.png)
 Claims vs. payer coverage vs. patient out-of-pocket breakdown. Cost trend analysis showing rising average cost per encounter over time. Top 10 revenue-generating procedures via treemap.
 
 ### Page 4: Patient Demographics & Drill-Through
-![Patient Demographics](dashboard_screenshots/Hospital Data_Page_4.png)
+![Patient Demographics](dashboard_screenshots/Hospital_Data_Page_4.png)
 Population overview by gender, race, and age group. Geographic map of patient locations. Day-of-week encounter patterns. Full patient detail table with drill-through from Page 2.
 
 ---
